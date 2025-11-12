@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Golf View Estate — Secure Your Place in Abuja's Most Exclusive Golf-Side Estate.</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom styles for progress bars and animations */
+    .progress-bar {
+      width: 0%;
+      transition: width 1.5s ease-out;
+    }
+    
+    .roi-bar-container {
+      height: 200px;
+      display: flex;
+      align-items: flex-end;
+    }
+    
+    .roi-bar {
+      height: 0%;
+      transition: height 1.5s ease-out;
+      width: 100%;
+    }
+    
+    .animate-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    
+    .animate-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .progress-circle {
+      transition: stroke-dashoffset 1.5s ease-out;
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-50 text-gray-900">
+
+  <!-- Hero -->
+  <header class="bg-gradient-to-b from-white to-gray-100">
+    <div class="max-w-6xl mx-auto px-6 py-12 lg:py-20">
+      <div class="grid lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <p class="inline-block text-sm font-semibold uppercase tracking-wider text-green-700 bg-green-100 px-3 py-1 rounded">
+            Now Selling — Limited Investor Slots
+          </p>
+          <h1 class="mt-6 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
+            Golf View Estate — <span class="text-green-700">Secure Your Place in Abuja's Most Exclusive Golf-Side Estate.</span>
+          </h1>
+
+          <p class="mt-6 text-lg max-w-2xl text-gray-700">
+            Own a luxury home with golf-view serenity that <strong>appreciates while you sleep</strong>.</p>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-4">
+            <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 bg-green-700 text-white font-semibold rounded shadow hover:bg-green-800">Claim Early Investor Slot</a>
+            <a href="#pricing" class="inline-flex items-center justify-center px-6 py-3 border border-gray-200 rounded bg-white hover:bg-gray-50">View Units & Pricing</a>
+          </div>
+
+          <ul class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 text-gray-700">
+            <li class="flex items-start"><span class="mr-3 font-semibold text-green-700">✔</span>Guaranteed early-phase dividend from month 12</li>
+            <li class="flex items-start"><span class="mr-3 font-semibold text-green-700">✔</span>Fully managed rental & resale program</li>
+            <li class="flex items-start"><span class="mr-3 font-semibold text-green-700">✔</span>Buyback guarantee (after year 2) at +15%</li>
+            <li class="flex items-start"><span class="mr-3 font-semibold text-green-700">✔</span>Secure, funded project — delivery on schedule</li>
+          </ul>
+        </div>
+
+        <div class="relative">
+          <div class="aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-lg">
+            <img alt="Golf View Estate — hero" src="hero1.png" class="w-full h-full object-cover"/>
+          </div>
+          <div class="mt-4 grid grid-cols-3 gap-3">
+            <img alt="pool" src="hero2.png" class="w-full h-24 object-cover rounded"/>
+            <img alt="tennis" src="hero3.png" class="w-full h-24 object-cover rounded"/>
+            <img alt="clubhouse" src="hero4.png" class="w-full h-24 object-cover rounded"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Quick Stats -->
+  <section class="max-w-6xl mx-auto px-6 py-8 -mt-4">
+    <div class="bg-white rounded-2xl shadow p-6 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+      <div><p class="text-2xl font-extrabold text-green-700">100%</p><p class="text-sm text-gray-600">Projected ROI (4 yrs)</p></div>
+      <div><p class="text-2xl font-extrabold text-green-700">12 mo</p><p class="text-sm text-gray-600">Early-phase dividends start</p></div>
+      <div><p class="text-2xl font-extrabold text-green-700">59</p><p class="text-sm text-gray-600">Premium buildings in the estate</p></div>
+      <div><p class="text-2xl font-extrabold text-green-700">24/7</p><p class="text-sm text-gray-600">Security & uninterrupted water</p></div>
+    </div>
+  </section>
+
+  <!-- Units & Pricing -->
+  <section id="pricing" class="max-w-6xl mx-auto px-6 py-12">
+    <h2 class="text-2xl font-bold">Available Units & Pricing</h2>
+    <p class="mt-2 text-gray-600 max-w-2xl">Select a unit that fits your lifestyle and investment goals. We offer one-off and installment plans with transparent deposits.</p>
+
+    <div class="mt-8 grid gap-6 grid-cols-1 md:grid-cols-3">
+      <div class="bg-white rounded-xl p-6 shadow">
+        <h3 class="font-semibold text-lg">2 Bedroom Flat + BQ</h3>
+        <p class="mt-2 text-gray-600">Contemporary design • 2 ensuite bedrooms • BQ • Car park</p>
+        <div class="mt-4 text-xl font-extrabold">₦120,000,000</div>
+        <div class="mt-3 text-sm text-gray-600">Installment option: ₦140,000,000</div>
+        <ul class="mt-4 text-sm text-gray-700 space-y-1">
+          <li>• 1st Deposit: ₦50,000,000</li>
+          <li>• 2nd Deposit: ₦45,000,000</li>
+          <li>• 3rd Deposit: ₦45,000,000</li>
+        </ul>
+        <a href="#contact" class="mt-6 inline-block px-4 py-2 bg-green-700 text-white rounded">Reserve Now</a>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 shadow">
+        <h3 class="font-semibold text-lg">4 Bedroom Terrace Duplex</h3>
+        <p class="mt-2 text-gray-600">4 ensuite bedrooms • Family lounge • Large kitchen • Car park</p>
+        <div class="mt-4 text-xl font-extrabold">₦200,000,000</div>
+        <div class="mt-3 text-sm text-gray-600">Installment option: ₦220,000,000</div>
+        <ul class="mt-4 text-sm text-gray-700 space-y-1">
+          <li>• 1st Deposit: ₦73,400,000</li>
+          <li>• 2nd Deposit: ₦73,300,000</li>
+          <li>• 3rd Deposit: ₦73,300,000</li>
+        </ul>
+        <a href="#contact" class="mt-6 inline-block px-4 py-2 bg-green-700 text-white rounded">Reserve Now</a>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 shadow">
+        <h3 class="font-semibold text-lg">3 Bedroom + BQ Semi-Detached</h3>
+        <p class="mt-2 text-gray-600">3 ensuite bedrooms • BQ • Large kitchen • Car park</p>
+        <div class="mt-4 text-xl font-extrabold">₦250,000,000</div>
+        <div class="mt-3 text-sm text-gray-600">Installment option: ₦270,000,000</div>
+        <ul class="mt-4 text-sm text-gray-700 space-y-1">
+          <li>• 1st Deposit: ₦90,000,000</li>
+          <li>• 2nd Deposit: ₦90,000,000</li>
+          <li>• 3rd Deposit: ₦90,000,000</li>
+        </ul>
+        <a href="#contact" class="mt-6 inline-block px-4 py-2 bg-green-700 text-white rounded">Reserve Now</a>
+      </div>
+    </div>
+
+    <div class="mt-8 grid gap-6 grid-cols-1 md:grid-cols-2">
+      <div class="bg-white rounded-xl p-6 shadow">
+        <h3 class="font-semibold text-lg">4 Bedroom Detached</h3>
+        <p class="mt-2 text-gray-600">4 ensuite bedrooms • BQ • Large kitchen + store • Family lounge</p>
+        <div class="mt-4 text-xl font-extrabold">₦300,000,000</div>
+        <div class="mt-3 text-sm text-gray-600">Installment option: ₦320,000,000</div>
+        <ul class="mt-4 text-sm text-gray-700 space-y-1">
+          <li>• 1st Deposit: ₦106,600,000</li>
+          <li>• 2nd Deposit: ₦106,700,000</li>
+          <li>• 3rd Deposit: ₦106,700,000</li>
+        </ul>
+        <a href="#contact" class="mt-6 inline-block px-4 py-2 bg-green-700 text-white rounded">Reserve Now</a>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 shadow">
+        <h3 class="font-semibold text-lg">5 Bedroom Detached</h3>
+        <p class="mt-2 text-gray-600">5 ensuite bedrooms • BQ • Large kitchen + store • Family lounge</p>
+        <div class="mt-4 text-xl font-extrabold">₦350,000,000</div>
+        <div class="mt-3 text-sm text-gray-600">Installment option: ₦370,000,000</div>
+        <ul class="mt-4 text-sm text-gray-700 space-y-1">
+          <li>• 1st Deposit: ₦123,400,000</li>
+          <li>• 2nd Deposit: ₦123,500,000</li>
+          <li>• 3rd Deposit: ₦123,100,000</li>
+        </ul>
+        <a href="#contact" class="mt-6 inline-block px-4 py-2 bg-green-700 text-white rounded">Reserve Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Amenities -->
+  <section class="max-w-6xl mx-auto px-6 py-12">
+    <h2 class="text-2xl font-bold">Estate Features & Benefits</h2>
+    <p class="mt-2 text-gray-600 max-w-2xl">Everything you expect from a premium, secure, and investment-driven estate — plus golf-first luxury amenities.</p>
+
+    <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="font-semibold">Golf & Sports</h3>
+        <ul class="mt-3 text-sm text-gray-700 space-y-2">
+          <li>• Artificial turf & putting range</li>
+          <li>• Indoor 5D golf simulator</li>
+          <li>• Lawn tennis & basketball courts</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="font-semibold">Lifestyle & Leisure</h3>
+        <ul class="mt-3 text-sm text-gray-700 space-y-2">
+          <li>• Swimming pool & lounge</li>
+          <li>• Landscaped greens & private club</li>
+          <li>• Family-friendly resort environment</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="font-semibold">Security & Management</h3>
+        <ul class="mt-3 text-sm text-gray-700 space-y-2">
+          <li>• 24/7 security & CCTV</li>
+          <li>• Premium facility management</li>
+          <li>• Uninterrupted water supply & paved roads</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Investment Structure -->
+  <section class="max-w-6xl mx-auto px-6 py-12 bg-gradient-to-b from-white to-gray-50">
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+      <div>
+        <h2 class="text-2xl font-bold">Investment Structure & ROI</h2>
+        <p class="mt-3 text-gray-600">Secure, transparent capital stack with phased returns. Example projections for early investors:</p>
+        <ul class="mt-4 text-gray-700 space-y-3">
+          <li>• ₦1B investment projected to grow to ₦2B in 4 years</li>
+          <li>• ₦2B investment projected to grow to ₦4B in 4 years</li>
+          <li>• Market-driven appreciation and rental yield drive returns</li>
+        </ul>
+        <div class="mt-6">
+          <h3 class="font-semibold">Risk Mitigation</h3>
+          <ul class="mt-3 text-sm text-gray-700 space-y-2">
+            <li>• Secured funding and contingency reserves</li>
+            <li>• Legal & regulatory compliance</li>
+            <li>• Dedicated project management to reduce delays</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 shadow">
+        <h3 class="font-semibold">What You Receive</h3>
+        <ul class="mt-3 text-gray-700 space-y-2 text-sm">
+          <li>• Title-secured unit</li>
+          <li>• Access to managed rental program</li>
+          <li>• Online project tracking dashboard</li>
+          <li>• Buyback guarantee after year 2 (+15% repurchase)</li>
+        </ul>
+        <div class="mt-6">
+          <p class="text-sm text-gray-600">Want to see a sample investor return schedule? <a href="#contact" class="text-green-700 font-semibold">Request the investor packet</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Tracking Dashboard -->
+  <section id="dashboard" class="max-w-6xl mx-auto px-6 py-12 bg-white">
+    <div class="text-center mb-12">
+      <h2 class="text-2xl font-bold">Project Tracking Dashboard</h2>
+      <p class="mt-2 text-gray-600 max-w-2xl mx-auto">Monitor real-time progress and projected returns on your investment.</p>
+    </div>
+
+    <!-- Building Progress Section -->
+    <div class="mb-16 animate-in">
+      <h3 class="text-xl font-bold mb-6">Construction Progress</h3>
+      <div class="bg-gray-50 rounded-xl p-6 shadow">
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Progress Timeline -->
+          <div>
+            <h4 class="font-semibold mb-4">Development Timeline</h4>
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div class="flex-shrink-0 w-3 h-3 mt-1 rounded-full bg-green-500"></div>
+                <div class="ml-4">
+                  <p class="font-medium">Land Acquisition & Planning</p>
+                  <p class="text-sm text-gray-600">Completed: Q4 2023</p>
+                  <div class="mt-2 bg-gray-200 rounded-full h-2">
+                    <div class="progress-bar bg-green-600 h-2 rounded-full" data-progress="100"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="flex-shrink-0 w-3 h-3 mt-1 rounded-full bg-green-500"></div>
+                <div class="ml-4">
+                  <p class="font-medium">Infrastructure Development</p>
+                  <p class="text-sm text-gray-600">In Progress: Q1 2024</p>
+                  <div class="mt-2 bg-gray-200 rounded-full h-2">
+                    <div class="progress-bar bg-green-600 h-2 rounded-full" data-progress="75"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="flex-shrink-0 w-3 h-3 mt-1 rounded-full bg-yellow-500"></div>
+                <div class="ml-4">
+                  <p class="font-medium">Foundation & Structure</p>
+                  <p class="text-sm text-gray-600">Starting: Q2 2024</p>
+                  <div class="mt-2 bg-gray-200 rounded-full h-2">
+                    <div class="progress-bar bg-yellow-500 h-2 rounded-full" data-progress="15"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="flex-shrink-0 w-3 h-3 mt-1 rounded-full bg-gray-300"></div>
+                <div class="ml-4">
+                  <p class="font-medium">Finishing & Handover</p>
+                  <p class="text-sm text-gray-600">Expected: Q4 2025</p>
+                  <div class="mt-2 bg-gray-200 rounded-full h-2">
+                    <div class="progress-bar bg-gray-300 h-2 rounded-full" data-progress="0"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Progress Visualization -->
+          <div>
+            <h4 class="font-semibold mb-4">Overall Project Completion</h4>
+            <div class="flex flex-col items-center justify-center">
+              <div class="relative w-48 h-48 mb-4">
+                <svg class="w-full h-full" viewBox="0 0 120 120">
+                  <!-- Background circle -->
+                  <circle cx="60" cy="60" r="54" fill="none" stroke="#e5e7eb" stroke-width="12" />
+                  <!-- Progress circle -->
+                  <circle cx="60" cy="60" r="54" fill="none" stroke="#10b981" stroke-width="12" 
+                          stroke-dasharray="339.292" stroke-dashoffset="339.292" 
+                          class="progress-circle" data-progress="45" />
+                </svg>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <span class="text-3xl font-bold text-green-700">45%</span>
+                </div>
+              </div>
+              <p class="text-gray-600 text-center">Overall project completion as of March 2024</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROI Projections Section -->
+    <div class="animate-in">
+      <h3 class="text-xl font-bold mb-6">Return On Investment Projections</h3>
+      <div class="bg-gray-50 rounded-xl p-6 shadow">
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- ROI Chart -->
+          <div>
+            <h4 class="font-semibold mb-4">Projected Growth Over 4 Years</h4>
+            <div class="roi-bar-container justify-between space-x-2 mt-4">
+              <div class="flex flex-col items-center flex-1 h-full">
+                <div class="roi-bar bg-green-600 rounded-t" data-height="25"></div>
+                <p class="mt-2 text-sm">Year 1</p>
+                <p class="text-xs text-gray-600">+25%</p>
+              </div>
+              <div class="flex flex-col items-center flex-1 h-full">
+                <div class="roi-bar bg-green-600 rounded-t" data-height="50"></div>
+                <p class="mt-2 text-sm">Year 2</p>
+                <p class="text-xs text-gray-600">+50%</p>
+              </div>
+              <div class="flex flex-col items-center flex-1 h-full">
+                <div class="roi-bar bg-green-600 rounded-t" data-height="75"></div>
+                <p class="mt-2 text-sm">Year 3</p>
+                <p class="text-xs text-gray-600">+75%</p>
+              </div>
+              <div class="flex flex-col items-center flex-1 h-full">
+                <div class="roi-bar bg-green-600 rounded-t" data-height="100"></div>
+                <p class="mt-2 text-sm">Year 4</p>
+                <p class="text-xs text-gray-600">+100%</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- ROI Details -->
+          <div>
+            <h4 class="font-semibold mb-4">Investment Breakdown</h4>
+            <div class="space-y-4">
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="text-sm font-medium">Capital Appreciation</span>
+                  <span class="text-sm font-medium">70%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                  <div class="progress-bar bg-green-600 h-2 rounded-full" data-progress="70"></div>
+                </div>
+              </div>
+              
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="text-sm font-medium">Rental Income</span>
+                  <span class="text-sm font-medium">20%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                  <div class="progress-bar bg-green-500 h-2 rounded-full" data-progress="20"></div>
+                </div>
+              </div>
+              
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="text-sm font-medium">Dividend Payouts</span>
+                  <span class="text-sm font-medium">10%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                  <div class="progress-bar bg-green-400 h-2 rounded-full" data-progress="10"></div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-6 p-4 bg-white rounded-lg border border-gray-200">
+              <p class="text-sm font-medium">Example: ₦100M Investment</p>
+              <div class="mt-2 grid grid-cols-2 gap-2 text-sm">
+                <div class="text-gray-600">Year 1 Value:</div>
+                <div class="font-medium">₦125M</div>
+                <div class="text-gray-600">Year 4 Value:</div>
+                <div class="font-medium">₦200M</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="max-w-6xl mx-auto px-6 py-12">
+    <h2 class="text-2xl font-bold">FAQ</h2>
+    <div class="mt-6 grid gap-6 grid-cols-1 md:grid-cols-2">
+      <div class="bg-white rounded-xl p-6 shadow">
+        <h4 class="font-semibold">When do early-phase dividends start?</h4>
+        <p class="mt-2 text-sm text-gray-700">Dividends are structured to begin within 12 months for Phase 1 participants, driven by early rental deployments and presales.</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 shadow">
+        <h4 class="font-semibold">What is the buyback guarantee?</h4>
+        <p class="mt-2 text-sm text-gray-700">Investors who wish to exit after year 2 can request a repurchase at a minimum developer-guaranteed uplift of 15%.</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 shadow">
+        <h4 class="font-semibold">How are payments handled?</h4>
+        <p class="mt-2 text-sm text-gray-700">We offer one-off payments and installment plans with clear deposit milestones. All payments are recorded and visible on your investor dashboard.</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 shadow">
+        <h4 class="font-semibold">Who manages the rental program?</h4>
+        <p class="mt-2 text-sm text-gray-700">A dedicated property management arm handles tenanting, maintenance, and payouts so investors enjoy passive returns.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="max-w-6xl mx-auto px-6 py-12">
+    <div class="bg-white rounded-2xl shadow p-8 grid md:grid-cols-2 gap-6">
+      <div>
+        <h2 class="text-2xl font-bold">Secure Your Investment — Limited Slots</h2>
+        <p class="mt-3 text-gray-600">Priority access and extra benefits for early investors. Call or visit our office to claim a slot and receive the investor packet.</p>
+        <div class="mt-6 space-y-3">
+          <div class="flex items-start gap-3"><span class="font-semibold text-green-700">📍</span><div><p class="text-sm font-semibold">Suite 20E Jinifa Plaza</p><p class="text-sm text-gray-600">Plot 1014 Ademulegun Street, Central Business District, Abuja FCT</p></div></div>
+          <div class="flex items-start gap-3"><span class="font-semibold text-green-700">📞</span><div><p class="text-sm font-semibold">0814 929 3079</p></div></div>
+          <div class="flex items-start gap-3"><span class="font-semibold text-green-700">✉️</span><div><p class="text-sm font-semibold">horventluxury@gmail.com</p></div></div>
+        </div>
+        <p class="mt-6 text-sm text-gray-500">We respect investor confidentiality. All meetings are by appointment only.</p>
+      </div>
+
+      <form class="bg-gray-50 p-6 rounded-xl">
+        <h3 class="font-semibold text-lg">Request Investor Packet / Reserve Unit</h3>
+        <p class="mt-2 text-sm text-gray-600">Fill this quick form and our investment team will contact you within 24 hours.</p>
+        <div class="mt-4 grid gap-3">
+          <input placeholder="Full name" class="w-full rounded-md p-3 border border-gray-200" />
+          <input placeholder="Email" class="w-full rounded-md p-3 border border-gray-200" />
+          <input placeholder="Phone" class="w-full rounded-md p-3 border border-gray-200" />
+          <select class="w-full rounded-md p-3 border border-gray-200">
+            <option>Select unit of interest</option>
+            <option>2BR Flat + BQ — ₦120M</option>
+            <option>4BR Terrace Duplex — ₦200M</option>
+            <option>3BR Semi-Detached — ₦250M</option>
+            <option>4BR Detached — ₦300M</option>
+            <option>5BR Detached — ₦350M</option>
+          </select>
+          <textarea placeholder="Short message or questions" class="w-full rounded-md p-3 border border-gray-200" rows="4"></textarea>
+          <div class="flex items-center gap-3">
+            <button type="submit" class="px-5 py-3 bg-green-700 text-white rounded font-semibold">Request Packet</button>
+            <a href="tel:08149293079" class="text-sm font-semibold text-green-700">Or call 0814 929 3079</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t mt-12">
+    <div class="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+      <p class="text-sm text-gray-600">© <script>document.write(new Date().getFullYear())</script> Golf View Estate — All rights reserved.</p>
+      <div class="text-sm text-gray-600">Designed for investors • Priority access for early buyers</div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll-triggered animations
+    document.addEventListener('DOMContentLoaded', function() {
+      // Intersection Observer for scroll-triggered animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            
+            // Animate progress bars
+            const progressBars = entry.target.querySelectorAll('.progress-bar');
+            progressBars.forEach(bar => {
+              const progress = bar.getAttribute('data-progress');
+              setTimeout(() => {
+                bar.style.width = progress + '%';
+              }, 300);
+            });
+            
+            // Animate ROI bars
+            const roiBars = entry.target.querySelectorAll('.roi-bar');
+            roiBars.forEach(bar => {
+              const height = bar.getAttribute('data-height');
+              setTimeout(() => {
+                bar.style.height = height + '%';
+              }, 500);
+            });
+            
+            // Animate circular progress
+            const progressCircles = entry.target.querySelectorAll('.progress-circle');
+            progressCircles.forEach(circle => {
+              const progress = circle.getAttribute('data-progress');
+              const circumference = 339.292; // 2 * π * r (r=54)
+              const offset = circumference - (progress / 100) * circumference;
+              setTimeout(() => {
+                circle.style.strokeDashoffset = offset;
+              }, 700);
+            });
+          }
+        });
+      }, observerOptions);
+
+      // Observe elements with animate-in class
+      const animateElements = document.querySelectorAll('.animate-in');
+      animateElements.forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
+
+</body>
+</html>
