@@ -42,62 +42,6 @@
       transform: rotate(-90deg);
       transform-origin: 50% 50%;
     }
-    
-    /* Modal styles for enlarged image */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
-      animation: fadeIn 0.3s ease;
-    }
-    
-    .modal-content {
-      margin: auto;
-      display: block;
-      width: 90%;
-      max-width: 700px;
-      max-height: 80%;
-      object-fit: contain;
-      animation: zoomIn 0.3s ease;
-    }
-    
-    .close {
-      position: absolute;
-      top: 15px;
-      right: 35px;
-      color: #f1f1f1;
-      font-size: 40px;
-      font-weight: bold;
-      cursor: pointer;
-      z-index: 1001;
-    }
-    
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    
-    @keyframes zoomIn {
-      from { transform: scale(0.9); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
-    
-    /* Mobile-specific styles */
-    @media (max-width: 768px) {
-      .location-image {
-        cursor: pointer;
-        transition: transform 0.3s ease;
-      }
-      
-      .location-image:active {
-        transform: scale(0.98);
-      }
-    }
   </style>
 </head>
 <body class="min-h-screen bg-gray-50 text-gray-900">
@@ -264,16 +208,16 @@
     </div>
   </section>
 
-  <!-- Location -->
+    <!-- Location -->
   <section id="location" class="max-w-6xl mx-auto px-6 py-12 bg-white">
     <h2 class="text-2xl font-bold">Prime Location Advantage</h2>
     <p class="mt-2 text-gray-600 max-w-2xl">
-      Strategically positioned along Airport Road, Abuja — Golf View Estate offers easy access to the city's landmarks,
+      Strategically positioned along Airport Road, Abuja — Golf View Estate offers easy access to the city’s landmarks,
       ensuring convenience, high appreciation potential, and serene connectivity.
     </p>
 
     <div class="mt-8 rounded-2xl overflow-hidden shadow-lg">
-      <img src="location.png" alt="Golf View Estate Location Map" class="w-full h-auto object-cover location-image" id="locationImage" />
+      <img src="location.png" alt="Golf View Estate Location Map" class="w-full h-auto object-cover" />
     </div>
 
     <div class="mt-6 grid grid-cols-2 sm:grid-cols-5 gap-4 text-center text-sm text-gray-700">
@@ -300,11 +244,6 @@
     </div>
   </section>
 
-  <!-- Image Modal -->
-  <div id="imageModal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modalImage">
-  </div>
 
   <!-- Investment Structure -->
   <section class="max-w-6xl mx-auto px-6 py-12 bg-gradient-to-b from-white to-gray-50">
@@ -584,6 +523,8 @@
   </div>
 </footer>
 
+
+
   <script>
     // Scroll-triggered animations
     document.addEventListener('DOMContentLoaded', function() {
@@ -635,44 +576,6 @@
       animateElements.forEach(el => {
         observer.observe(el);
       });
-
-      // Image modal functionality for mobile
-      const modal = document.getElementById("imageModal");
-      const modalImg = document.getElementById("modalImage");
-      const locationImage = document.getElementById("locationImage");
-      const closeBtn = document.getElementsByClassName("close")[0];
-
-      // Check if device is mobile
-      function isMobileDevice() {
-        return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1) ||
-               window.matchMedia("(max-width: 768px)").matches;
-      }
-
-      // Only add click event if on mobile
-      if (isMobileDevice() && locationImage) {
-        locationImage.addEventListener('click', function() {
-          modal.style.display = "block";
-          modalImg.src = this.src;
-          modalImg.alt = this.alt;
-        });
-
-        closeBtn.addEventListener('click', function() {
-          modal.style.display = "none";
-        });
-
-        modal.addEventListener('click', function(e) {
-          if (e.target === modal) {
-            modal.style.display = "none";
-          }
-        });
-
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(e) {
-          if (e.key === "Escape" && modal.style.display === "block") {
-            modal.style.display = "none";
-          }
-        });
-      }
     });
   </script>
 
